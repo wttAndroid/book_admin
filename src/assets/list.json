@@ -1,0 +1,55 @@
+{
+  "menulist": [{
+    "id": 101,
+    "authName": "用户管理",
+    "icon": "el-icon-user-solid",
+    "path": null,
+    "children": [{
+      "authName": "用户列表",
+      "path": "userlist",
+      "children": []
+    }, {
+      "authName": "用户资料",
+      "path": "userinfo",
+      "children": []
+    }]
+  }, {
+    "id": 102,
+    "authName": "图书管理",
+    "path": null,
+    "icon": "el-icon-s-data",
+    "children": [{
+      "authName": "图书信息查询",
+      "path": "booklist",
+      "children": []
+    }, {
+      "authName": "图书信息添加",
+      "path": "bookinfo",
+      "children": []
+    }]
+  }, {
+    "id": 103,
+    "authName": "借阅管理",
+    "path": null,
+    "icon": "el-icon-s-unfold",
+    "children": [{
+      "authName": "借阅记录管理",
+      "path": "borrowlist",
+      "children": []
+    }, {
+      "authName": "借阅记录添加",
+      "path": "borrowadd",
+      "children": []
+    }]
+  }, {
+    "id": 104,
+    "authName": "数据统计",
+    "path": null,
+    "icon": "el-icon-s-marketing",
+    "children": [{
+      "authName": "用户数据统计",
+      "path": "datalist",
+      "children": []
+    }]
+  }]
+}

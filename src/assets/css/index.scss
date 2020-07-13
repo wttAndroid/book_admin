@@ -1,0 +1,23 @@
+@import 'normalize.css';
+
+
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-page {
+  background-color: $page-color-main;
+}
+
+.breadcrumb-row {
+  margin-bottom: 20px;
+}
+
+.card-head-row {
+  margin-bottom: 20px;
+}

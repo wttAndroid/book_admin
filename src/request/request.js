@@ -8,7 +8,7 @@ export const request = createInctance();
 
 function createInctance() {
   const instance = axios.create({
-    baseURL: 'http://localhost:3000/',
+    baseURL: 'http://123.56.144.92:8881/', //这里要改成你后端的地址
     timeout: 5000
   })
 

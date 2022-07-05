@@ -2,7 +2,13 @@
   <div class="login">
     <el-card class="box-card">
       <div class="login-title">欢迎来到晋城职院图书管理系统</div>
-      <el-form :model="loginForm" status-icon :rules="loginRules" ref="loginForm" size="medium">
+      <el-form
+        :model="loginForm"
+        status-icon
+        :rules="loginRules"
+        ref="loginForm"
+        size="medium"
+      >
         <el-form-item prop="name">
           <el-input
             prefix-icon="el-icon-user-solid"
@@ -36,24 +42,24 @@ export default {
   data() {
     return {
       loginForm: {
-        name: "",
-        pwd: ""
+        name: "admin",
+        pwd: "123",
       },
       loginRules: {
         name: [
           { required: true, message: "请输入姓名", trigger: "blur" },
-          { min: 3, max: 5, message: "姓名长度在2~5之间！", trigger: "blur" }
+          { min: 2, max: 5, message: "姓名长度在2~5之间！", trigger: "blur" },
         ],
         pwd: [
           { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 3, max: 12, message: "密码长度在3~12之间！", trigger: "blur" }
-        ]
-      }
+          { min: 3, max: 12, message: "密码长度在3~12之间！", trigger: "blur" },
+        ],
+      },
     };
   },
   methods: {
     submitForm() {
-      this.$refs.loginForm.validate(async valid => {
+      this.$refs.loginForm.validate(async (valid) => {
         if (!valid) return this.$message.error("请输入有效的用户名和密码！");
         const data = await getLogin(this.loginForm);
         if (data.code != 200) {
@@ -68,8 +74,8 @@ export default {
     },
     resetForm() {
       this.$router.push("/regist");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -87,12 +93,12 @@ export default {
     right: 0;
     top: 0;
     bottom: 0;
-    background-image: url(http://www.sxjczy.cn:88/gb2015/images/2.jpg);
+    background-image: url("../assets/imgs/bg.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
     filter: blur(3px);
-    z-index: -100;
+    // z-index: 1;
   }
 
   .box-card {

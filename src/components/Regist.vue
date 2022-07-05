@@ -2,7 +2,13 @@
   <div class="regist">
     <el-card class="box-card">
       <div class="login-title">欢迎来到晋城职院图书管理系统</div>
-      <el-form :model="registForm" status-icon :rules="registRules" ref="registForm" size="medium">
+      <el-form
+        :model="registForm"
+        status-icon
+        :rules="registRules"
+        ref="registForm"
+        size="medium"
+      >
         <el-form-item prop="name">
           <el-input
             prefix-icon="el-icon-user-solid"
@@ -52,17 +58,17 @@ export default {
       registRules: {
         name: [
           { required: true, message: "请输入姓名", trigger: "blur" },
-          { min: 3, max: 5, message: "姓名长度在2~5之间！", trigger: "blur" }
+          { min: 2, max: 5, message: "姓名长度在2~5之间！", trigger: "blur" },
         ],
         pwd: [
           { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 3, max: 12, message: "密码长度在3~12之间！", trigger: "blur" }
+          { min: 3, max: 12, message: "密码长度在3~12之间！", trigger: "blur" },
         ],
         clas: [
           { required: true, message: "请输入班级", trigger: "blur" },
-          { min: 3, max: 15, message: "请输入有效的班级！", trigger: "blur" }
-        ]
-      }
+          { min: 3, max: 15, message: "请输入有效的班级！", trigger: "blur" },
+        ],
+      },
     };
   },
   methods: {
@@ -70,7 +76,7 @@ export default {
       this.$router.push("/login");
     },
     submitForm() {
-      this.$refs.registForm.validate(async valid => {
+      this.$refs.registForm.validate(async (valid) => {
         if (!valid) return this.$message.error("请完善有效的注册信息！");
         const data = await getRegist(this.registForm);
         if (data.code != 200) return this.$message.error(data.msg);
@@ -82,7 +88,7 @@ export default {
     async login() {
       const data = await getLogin({
         name: this.registForm.name,
-        pwd: this.registForm.pwd
+        pwd: this.registForm.pwd,
       });
       if (data.code != 200) {
         this.$message.error(data.msg);
@@ -92,8 +98,8 @@ export default {
       window.sessionStorage.setItem("user", JSON.stringify(data.data));
       this.$message.success(data.msg);
       this.$router.push("/home");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -111,12 +117,12 @@ export default {
     right: 0;
     top: 0;
     bottom: 0;
-    background-image: url(http://www.sxjczy.cn:88/gb2015/images/2.jpg);
+    background-image: url("../assets/imgs/bg.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
     filter: blur(3px);
-    z-index: -100;
+    // z-index: -100;
   }
 
   .box-card {

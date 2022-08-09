@@ -14,6 +14,11 @@
 
 ！！！这里需要搭建仓库中的对应的【图书管理后端】express项目
 
+#### 当前项目源代码
+vue前端：https://gitee.com/wttAndroid/book_admin
+
+nodejs后端：https://gitee.com/wttAndroid/book_server
+
 
 #### 项目图片演示
 

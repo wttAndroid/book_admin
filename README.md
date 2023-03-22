@@ -35,3 +35,7 @@ nodejs后端：https://gitee.com/wttAndroid/book_server
 ####  毕业论文在dist/article文件下
 
 dist/article/图书管理系统论文.docx
+
+#### 联系我：远程调试/二次开发/毕设
+
+![远程调试/二次开发/毕设](https://gitee.com/wttAndroid/online-learning-platform/raw/master/public/static/weixin.jpg)
